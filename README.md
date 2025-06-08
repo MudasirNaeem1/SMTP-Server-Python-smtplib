@@ -141,13 +141,16 @@ sequenceDiagram
 
 ---
 
-## 📸 Screenshots & Demo
+## 🔍 Screenshots & Demo
 
 ### 🔐 User Authentication
 <div align="center">
 
 **Signup Process**
-![Signup](https://raw.githubusercontent.com/MudasirNaeem1/smtp-mail-server/main/screenshots/signup.png)
+
+First Signup Accounts to send mail from one account/Gmail to other.
+
+![Signup](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask/blob/main/Screenshots/20250608_140434.jpeg)
 
 *Secure user registration with duplicate email prevention*
 
@@ -157,17 +160,24 @@ sequenceDiagram
 <div align="center">
 
 **Compose Email Interface**
-![Compose](https://raw.githubusercontent.com/MudasirNaeem1/smtp-mail-server/main/screenshots/compose.png)
+
+After logged in, do compose an email on "mudasirnaeem000@gmail.com" Gmail account and sent it to "maisumabbas13@gmail.com"
+
+![Compose](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask/blob/main/Screenshots/20250608_140438.jpeg)
 
 *Clean and intuitive email composition interface*
 
 </div>
 
-### 📬 Inbox Management
+### 🔍 Inbox Management
 <div align="center">
 
 **Email Inbox**
-![Inbox](https://raw.githubusercontent.com/MudasirNaeem1/smtp-mail-server/main/screenshots/inbox.png)
+
+Email has successfully been sent to "maisumabbas13@gmail.com" and recieved in inbox folder as well.
+Sent messages has also saved in sentbox.
+
+![Inbox](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask/blob/main/Screenshots/20250608_140442.jpeg)
 
 *Organized inbox with sender details and timestamps*
 
@@ -177,19 +187,33 @@ sequenceDiagram
 <div align="center">
 
 **Email Reply**
-![Reply](https://raw.githubusercontent.com/MudasirNaeem1/smtp-mail-server/main/screenshots/reply.png)
+
+We can do a reply as well. Reply emails will sent to the senders mails and sender can review receiver's reply.
+
+![Reply](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask/blob/main/Screenshots/20250608_140448.jpeg)
 
 *Seamless email reply with thread continuity*
+
+Reply email has been send to sender's mail, and sender also recieved their reply in inbox folder.
 
 </div>
 
 ### ⭐ Important Emails
 <div align="center">
 
-**Mark as Important**
-![Important](https://raw.githubusercontent.com/MudasirNaeem1/smtp-mail-server/main/screenshots/important.png)
+**Email Mark as Important**
+
+We can delete any email from inbox or sendbox, that may not relevant for us.
+
+![Delete](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask/blob/main/Screenshots/20250608_140451.jpeg)
+
+We also can mark any email from inbox as important.
+
+![Important](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask/blob/main/Screenshots/20250608_140455.jpeg)
 
 *Flag important emails for quick access*
+
+
 
 </div>
 
@@ -203,34 +227,6 @@ sequenceDiagram
 > - Python 3.x installed
 > - pip package manager
 > - Local machine for testing
-
-### 🔧 Installation
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/MudasirNaeem1/smtp-mail-server.git
-   cd smtp-mail-server
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Initialize Database**
-   ```bash
-   python database.py
-   ```
-
-4. **Run the Application**
-   ```bash
-   python app.py
-   ```
-
-5. **Access the Application**
-   ```
-   http://localhost:5000
-   ```
 
 ### 📦 Required Packages
 
@@ -358,15 +354,15 @@ gantt
     title SMTP Mail Server Development Timeline
     dateFormat  YYYY-MM-DD
     section Phase 1
-    Research & Setup     :done, phase1, 2024-01-01, 2024-01-14
+    Research & Setup     :done, phase1, 2025-02-21, 2025-03-08
     section Phase 2
-    Core Development     :done, phase2, 2024-01-15, 2024-01-28
+    Core Development     :done, phase2, 2025-03-09, 2025-03-20
     section Phase 3
-    Database Integration :done, phase3, 2024-01-29, 2024-02-11
+    Database Integration :done, phase3, 2025-03-21, 2025-04-10
     section Phase 4
-    Testing & Debugging  :done, phase4, 2024-02-12, 2024-02-25
+    Testing & Debugging  :done, phase4, 2025-04-11, 2025-04-22
     section Phase 5
-    Documentation        :done, phase5, 2024-02-26, 2024-03-04
+    Documentation        :done, phase5, 2025-04-23, 2025-05-05
 ```
 
 *7-Week Development Schedule*
@@ -377,8 +373,8 @@ gantt
 | Week | Tasks | Responsibility |
 |------|-------|----------------|
 | **Week 1-2** | Research & Environment Setup | Both Members |
-| **Week 3** | Email Processing & Server Setup | Maisum Abbas |
-| **Week 4** | Database Design & Integration | Mudasir |
+| **Week 3** | Email Processing & Server Setup | Mudasir |
+| **Week 4** | Database Design & Integration | Maisum Abbas |
 | **Week 5-6** | Testing & Optimization | Both Members |
 | **Week 7** | Documentation & Submission | Both Members |
 
@@ -442,10 +438,10 @@ mindmap
 
 <div align="center">
 
-| Role | Name | Roll Number | Responsibilities |
-|------|------|-------------|------------------|
-| **🏆 Project Leader** | **Maisum Abbas** | **22K-4129** | SMTP Server Implementation & Email Handling |
-| **💻 Developer** | **Mudasir** | **22K-8732** | Flask Integration & Component Integration |
+| Name | Roll Number | Responsibilities |
+|------|-------------|------------------|
+| **Maisum Abbas** | **22K-4129** | Flask Integration & Component Integration  |
+| **Mudasir** | **22K-8732** | SMTP Server Implementation & Email Handling |
 
 </div>
 
@@ -475,9 +471,6 @@ mindmap
 ## 🔧 System Requirements
 
 ### 💻 **Hardware Requirements**
-- **Processor**: Intel i3 or equivalent
-- **RAM**: 4GB minimum, 8GB recommended
-- **Storage**: 500MB free space
 - **Network**: Internet connection for testing
 
 ### 🖥️ **Software Requirements**
@@ -488,57 +481,14 @@ mindmap
 
 ---
 
-## 🐛 Troubleshooting
-
-### ❓ **Common Issues**
-
-> **🔴 Port Already in Use**
-> ```bash
-> # Solution: Change port in app.py
-> app.run(host='0.0.0.0', port=5001, debug=True)
-> ```
-
-> **🟡 Database Connection Error**
-> ```bash
-> # Solution: Initialize database
-> python database.py
-> ```
-
-> **🟠 Email Not Sending**
-> ```bash
-> # Solution: Check SMTP configuration
-> # Verify recipient email format
-> ```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
 ## 📞 Contact & Support
 
 <div align="center">
 
 **Need Help? Let's Connect!** 🌟
 
-[![LinkedIn - Maisum](https://img.shields.io/badge/LinkedIn-Maisum_Abbas-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/maisum-abbas)
 [![LinkedIn - Mudasir](https://img.shields.io/badge/LinkedIn-Mudasir-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mudasir-naeem-698679303)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MudasirNaeem1/smtp-mail-server)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MudasirNaeem1/SMTP-Server-Python-smtplib-flask)
 [![Email](https://img.shields.io/badge/Email-Contact_Us-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mudasirnaeem000@gmail.com)
 
 ---
@@ -553,7 +503,7 @@ We welcome contributions! Please follow these steps:
 **Have suggestions?** 💭 **Open an issue!**  
 **Want to collaborate?** 🤝 **Let's connect!**
 
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=MudasirNaeem1.smtp-mail-server)
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=MudasirNaeem1.SMTP-Server-Python-smtplib-flask)
 
 </div>
 
@@ -561,8 +511,7 @@ We welcome contributions! Please follow these steps:
 
 <div align="center">
 
-**🎉 Thank you for exploring our SMTP Mail Server project! 🎉**
+** Thank you for exploring our SMTP Mail Server project! **
 
-*Built with ❤️ by Computer Science Students*
 
 </div>
