@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <style>
+            :root {
+                --primary-color: #4a6fa5;
+                --secondary-color: #6b8cae;
+                --accent-color: #304c70;
+                --text-color: #333333;
+                --light-bg: #f8f9fa;
+                --white: #ffffff;
+                --success: #28a745;
+                --border-radius: 8px;
+                --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: var(--light-bg);
+                color: var(--text-color);
+                line-height: 1.6;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 800px;
+                background-color: var(--white);
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                margin-top: 20px;
+                overflow: hidden;
+            }
+
+            header {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .welcome-text {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .main-content {
+                padding: 25px;
+            }
+
+            .nav-menu {
+                display: flex;
+                justify-content: space-between;
+                background-color: #fff;
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                margin-bottom: 30px;
+            }
+
+            .nav-menu a {
+                color: var(--primary-color);
+                text-decoration: none;
+                padding: 15px 20px;
+                flex: 1;
+                text-align: center;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                border-bottom: 3px solid transparent;
+            }
+
+            .nav-menu a:hover {
+                background-color: var(--light-bg);
+                border-bottom: 3px solid var(--secondary-color);
+            }
+
+            .logout {
+                background-color: #f8d7da;
+                color: #721c24 !important;
+            }
+
+            .logout:hover {
+                background-color: #f5c6cb;
+                border-bottom: 3px solid #721c24;
+            }
+
+            .section-title {
+                color: var(--primary-color);
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid var(--light-bg);
+            }
+
+            .mail-list {
+                list-style: none;
+            }
+
+            .mail-item {
+                background-color: #fff;
+                border-radius: var(--border-radius);
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+                border-left: 4px solid var(--secondary-color);
+                transition: transform 0.2s;
+            }
+
+            .mail-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .mail-label {
+                font-weight: 600;
+                color: var(--accent-color);
+                margin-right: 5px;
+            }
+
+            .mail-content {
+                margin: 5px 0;
+            }
+
+            .mail-subject {
+                font-weight: 500;
+            }
+
+            .mail-message {
+                color: #555;
+                margin-top: 8px;
+                line-height: 1.4;
+            }
+
+            .no-mails {
+                color: #6c757d;
+                font-style: italic;
+                text-align: center;
+                padding: 20px;
+                background-color: var(--light-bg);
+                border-radius: var(--border-radius);
+            }
+
+            .footer {
+                margin-top: 30px;
+                text-align: center;
+                color: #777;
+                font-size: 14px;
+                padding: 20px;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .nav-menu {
+                    flex-direction: column;
+                }
+
+                .nav-menu a {
+                    border-bottom: 1px solid #eee;
+                    padding: 12px;
+                }
+
+                .nav-menu a:last-child {
+                    border-bottom: none;
+                }
+
+                .container {
+                    border-radius: 0;
+                }
+
+                .main-content {
+                    padding: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h2 class="welcome-text">Welcome, {{ session.email }}</h2>
+            </header>
+
+            <div class="main-content">
+                <nav class="nav-menu">
+                    <a href="/compose">Compose Mail</a>
+                    <a href="/inbox">Inbox</a>
+                    <a href="/sent">Sent</a>
+                    <a href="/logout" class="logout">Logout</a>
+                </nav>
+
+                <h3 class="section-title">Important Mails</h3>
+
+                {% if important_mails %}
+                <ul class="mail-list">
+                    {% for mail in important_mails %}
+                    <li class="mail-item">
+                        <div class="mail-content">
+                            <span class="mail-label">From:</span>
+                            <span>{{ mail[1] }}</span>
+                        </div>
+                        <div class="mail-content">
+                            <span class="mail-label">Subject:</span>
+                            <span class="mail-subject">{{ mail[2] }}</span>
+                        </div>
+                        <div class="mail-content">
+                            <span class="mail-label">Message:</span>
+                            <p class="mail-message">{{ mail[3] }}</p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="no-mails">No important mails</p>
+                {% endif %}
+            </div>
+
+            <div class="footer">© 2025 SMTP Mail Server</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign Up</title>
+        <style>
+            :root {
+                --primary-color: #4a6fa5;
+                --secondary-color: #6b8cae;
+                --accent-color: #304c70;
+                --text-color: #333333;
+                --light-bg: #f8f9fa;
+                --white: #ffffff;
+                --success: #28a745;
+                --danger: #dc3545;
+                --border-radius: 8px;
+                --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: var(--light-bg);
+                color: var(--text-color);
+                line-height: 1.6;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .signup-container {
+                width: 100%;
+                max-width: 500px;
+                background-color: var(--white);
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                overflow: hidden;
+            }
+
+            .signup-header {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 25px 20px;
+                text-align: center;
+            }
+
+            .signup-header h2 {
+                margin: 0;
+                font-size: 24px;
+            }
+
+            .signup-form {
+                padding: 30px;
+            }
+
+            .name-fields {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 5px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+                flex: 1;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--text-color);
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: var(--border-radius);
+                font-size: 16px;
+                transition: border 0.3s, box-shadow 0.3s;
+            }
+
+            .form-group input:focus {
+                outline: none;
+                border-color: var(--secondary-color);
+                box-shadow: 0 0 0 3px rgba(107, 140, 174, 0.2);
+            }
+
+            .signup-btn {
+                background-color: var(--primary-color);
+                color: white;
+                border: none;
+                width: 100%;
+                padding: 14px;
+                border-radius: var(--border-radius);
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 600;
+                transition: background-color 0.3s;
+                margin-top: 10px;
+            }
+
+            .signup-btn:hover {
+                background-color: var(--accent-color);
+            }
+
+            .login-link {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 15px;
+            }
+
+            .login-link a {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+            .login-link a:hover {
+                color: var(--accent-color);
+                text-decoration: underline;
+            }
+
+            .error-message {
+                background-color: #f8d7da;
+                color: var(--danger);
+                padding: 10px;
+                border-radius: var(--border-radius);
+                margin-top: 20px;
+                text-align: center;
+                font-size: 14px;
+                animation: fadeIn 0.3s ease-in;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .app-logo {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .app-logo h1 {
+                color: var(--primary-color);
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+
+            .footer {
+                margin-top: 30px;
+                text-align: center;
+                color: #777;
+                font-size: 14px;
+            }
+
+            /* Password visibility toggle */
+            .password-container {
+                position: relative;
+            }
+
+            .toggle-password {
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #777;
+                font-size: 14px;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 600px) {
+                .signup-container {
+                    box-shadow: none;
+                }
+
+                .signup-form {
+                    padding: 20px;
+                }
+
+                .name-fields {
+                    flex-direction: column;
+                    gap: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app-logo">
+            <h1>Mail App</h1>
+        </div>
+
+        <div class="signup-container">
+            <div class="signup-header">
+                <h2>Create Your Account</h2>
+            </div>
+
+            <div class="signup-form">
+                <form method="POST">
+                    <div class="name-fields">
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input
+                                type="text"
+                                id="fname"
+                                name="fname"
+                                required
+                                autocomplete="given-name"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lname">Last Name</label>
+                            <input
+                                type="text"
+                                id="lname"
+                                name="lname"
+                                required
+                                autocomplete="family-name"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            autocomplete="email"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-container">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                required
+                            />
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                onclick="togglePassword()"
+                            >
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="signup-btn">
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="login-link">
+                    <p>Already have an account? <a href="/login">Login</a></p>
+                </div>
+
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <div class="error-message">{{ messages[0] }}</div>
+                {% endif %} {% endwith %}
+            </div>
+        </div>
+
+        <div class="footer">© 2025 SMTP Mail Server</div>
+
+        <script>
+            function togglePassword() {
+                const passwordInput = document.getElementById("password");
+                const toggleButton = document.querySelector(".toggle-password");
+
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    toggleButton.textContent = "Hide";
+                } else {
+                    passwordInput.type = "password";
+                    toggleButton.textContent = "Show";
+                }
+            }
+        </script>
+    </body>
+</html>
