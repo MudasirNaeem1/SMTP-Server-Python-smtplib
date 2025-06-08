@@ -1,4 +1,4 @@
-# 📧 SMTP Mail Server Implementation
+# 📧 SMTP Mail Server Implementation (Using smtplib and flask)
 
 <div align="center">
   
