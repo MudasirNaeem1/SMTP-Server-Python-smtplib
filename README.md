@@ -380,7 +380,7 @@ gantt
 
 ---
 
-## 🧪 Testing & Quality Assurance
+## 🔧 Testing & Quality Assurance
 
 ### ✅ **Test Categories**
 
@@ -500,8 +500,8 @@ mindmap
 📍 **Location**: Karachi, Pakistan  
 
 **Found this project helpful?** ⭐ **Star the repository!**  
-**Have suggestions?** 💭 **Open an issue!**  
-**Want to collaborate?** 🤝 **Let's connect!**
+**Have suggestions?** 💭 **Feel free to discuss!**  
+**Want to collaborate?** **Let's connect!**
 
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=MudasirNaeem1.SMTP-Server-Python-smtplib-flask)
 
